@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strategic Role Choice Questions - Detailed Reference</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Open Sans", Arial, sans-serif;
+      font-size: 12pt;
+      line-height: 1.6;
+      color: #1a237e;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #00acc1;
+      font-size: 24pt;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #546e7a;
+      font-size: 11pt;
+      font-style: italic;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .decision-tree {
+      background: #fff;
+      border: 2pt solid #00acc1;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 6pt;
+    }
+
+    .decision-tree h2 {
+      font-size: 16pt;
+      color: #00838f;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .decision-step {
+      margin-bottom: 20px;
+      padding: 15px;
+      padding-left: 40px;
+      position: relative;
+      background: #f9f9f9;
+      border-left: 3px solid #00acc1;
+      border-radius: 4px;
+    }
+
+    .decision-step:nth-child(even) {
+      background: #f0f8ff;
+    }
+
+    .decision-step .number {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      width: 24px;
+      height: 24px;
+      background: #00acc1;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 12pt;
+    }
+
+    .decision-step h4 {
+      color: #00838f;
+      font-size: 13pt;
+      margin-bottom: 5px;
+    }
+
+    .decision-step p {
+      font-size: 11pt;
+      margin-bottom: 8px;
+      color: #37474f;
+    }
+
+    .decision-step .sub-questions {
+      font-size: 10pt;
+      color: #546e7a;
+      margin-left: 15px;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .decision-step .sub-questions li {
+      margin-bottom: 4px;
+    }
+
+    .decision-step .leads-to {
+      font-size: 10pt;
+      color: #9c27b0;
+      font-style: italic;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #ccc;
+    }
+
+    .notes {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fffbf0;
+      border: 1px solid #ffc107;
+      border-radius: 6px;
+    }
+
+    .notes h3 {
+      color: #f57c00;
+      margin-bottom: 10px;
+    }
+
+    .notes p {
+      color: #5d4037;
+      font-size: 10pt;
+      margin-bottom: 5px;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .container {
+        box-shadow: none;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Strategic Role Choice Questions</h1>
+    <p class="subtitle">
+      Detailed reference for K-12 educator workshop - Full question text for potential integration with decision tree SVG
+    </p>
+
+    <div class="decision-tree">
+      <h2>Complete Decision Framework</h2>
+
+      <!-- Question 0 -->
+      <div class="decision-step">
+        <div class="number">0</div>
+        <h4>To AI or Not to AI?</h4>
+        <p>Should AI be involved at all?</p>
+        <ul class="sub-questions">
+          <li>• Is this a foundational skill?</li>
+          <li>• Do students need independent practice?</li>
+          <li>• Learning vs. producing?</li>
+        </ul>
+        <div class="leads-to">
+          → If learning core skills: Consider no AI first<br>
+          → If building foundation: Stay human-only<br>
+          → If joy of doing/hobbies/creative: Maybe no AI
+        </div>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="decision-step">
+        <div class="number">1</div>
+        <h4>Objectives & Evaluation</h4>
+        <p>What are the learning goals?</p>
+        <ul class="sub-questions">
+          <li>• Skill practice vs. polished output?</li>
+          <li>• Assessment focus?</li>
+          <li>• Success metrics?</li>
+        </ul>
+        <div class="leads-to">
+          → Skill-building focus: Human-Led roles (Strategist/Implementer)<br>
+          → Production focus: Consider AI-Led roles
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="decision-step">
+        <div class="number">2</div>
+        <h4>Resources & Support</h4>
+        <p>What tools and knowledge exist?</p>
+        <ul class="sub-questions">
+          <li>• AI access (free/paid)?</li>
+          <li>• Experience level?</li>
+          <li>• Available help?</li>
+        </ul>
+        <div class="leads-to">
+          → Limited resources: Strategist/Implementer<br>
+          → Ample resources: Can consider Curator/Orchestrator
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="decision-step">
+        <div class="number">3</div>
+        <h4>Constraints & Obligations</h4>
+        <p>Time, format, and policy limits?</p>
+        <ul class="sub-questions">
+          <li>• Class time?</li>
+          <li>• Format requirements?</li>
+          <li>• School AI policies?</li>
+        </ul>
+        <div class="leads-to">
+          → Tight deadlines: Curator/Orchestrator<br>
+          → Flexible time: Can focus on Strategist/Implementer for learning
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="decision-step">
+        <div class="number">4</div>
+        <h4>Tool-Task Fit</h4>
+        <p>Does AI match the learning need?</p>
+        <ul class="sub-questions">
+          <li>• AI strength area?</li>
+          <li>• Enhances learning?</li>
+          <li>• Preserves thinking?</li>
+        </ul>
+        <div class="leads-to">
+          → Match role to human judgment needs<br>
+          → Discovery phase: Consider human control<br>
+          → Delivery phase: Can delegate more to AI
+        </div>
+      </div>
+    </div>
+
+    <div class="notes">
+      <h3>Integration Notes</h3>
+      <p>• These detailed questions can be merged into the SVG decision tree as needed</p>
+      <p>• Sub-questions provide context for teacher decision-making</p>
+      <p>• "Leads to" information helps guide role selection</p>
+      <p>• Consider adding tooltips or expandable details to SVG nodes</p>
+      <p>• Questions progress from foundational (To AI or not) to specific implementation</p>
+    </div>
+
+    <div class="notes" style="margin-top: 20px;">
+      <h3>Role Mapping Summary</h3>
+      <p><strong>Human-Led + Discovery = STRATEGIST:</strong> You explore, AI assists with research</p>
+      <p><strong>Human-Led + Delivery = IMPLEMENTER:</strong> You build, AI assists with execution</p>
+      <p><strong>AI-Led + Discovery = CURATOR:</strong> AI gathers broadly, you evaluate and select</p>
+      <p><strong>AI-Led + Delivery = ORCHESTRATOR:</strong> AI produces, you refine and coordinate</p>
+    </div>
+  </div>
+</body>
+</html>

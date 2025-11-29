@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Define gradients for the continuum effect -->
+  <defs>
+    <!-- Vertical gradient: Blue (Human-Led) to Orange (AI-Led) -->
+    <linearGradient id="verticalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196F3;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#FF9800;stop-opacity:0.3" />
+    </linearGradient>
+
+    <!-- Horizontal gradient: Teal (Discovery) to Purple (Delivery) -->
+    <linearGradient id="horizontalGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00BCD4;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#9C27B0;stop-opacity:0.3" />
+    </linearGradient>
+
+
+    <!-- Arrow markers for axes -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a237e" />
+    </marker>
+  </defs>
+
+
+  <!-- Apply gradients as background layers -->
+  <rect width="400" height="400" fill="url(#verticalGradient)" />
+  <rect width="400" height="400" fill="url(#horizontalGradient)" style="mix-blend-mode: multiply;" />
+
+  <!-- Cartesian axes -->
+  <!-- Horizontal axis (Discovery - Delivery) -->
+  <line x1="20" y1="200" x2="380" y2="200" stroke="#1a237e" stroke-width="3" />
+  <line x1="380" y1="200" x2="20" y2="200" stroke="#1a237e" stroke-width="3" />
+
+  <!-- Vertical axis (Human-Led - AI-Led) -->
+  <line x1="200" y1="20" x2="200" y2="380" stroke="#1a237e" stroke-width="3" />
+  <line x1="200" y1="380" x2="200" y2="20" stroke="#1a237e" stroke-width="3" />
+
+  <!-- Quadrant labels with backgrounds for readability -->
+
+  <!-- Top-Left: Strategist -->
+  <g transform="translate(100, 100)">
+    <rect x="-70" y="-40" width="140" height="90" fill="white" fill-opacity="0.9" rx="3" />
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16"
+      font-weight="bold" fill="#1a237e">Strategist</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="600" fill="#00838f">Human-led Discovery</text>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      fill="#37474f">You explore &amp; decide</text>
+    <text x="0" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#6a1b9a" font-style="italic">Delegate: research tasks</text>
+    <text x="0" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#d84315">When: Early learning, critical thinking</text>
+  </g>
+
+  <!-- Top-Right: Implementer -->
+  <g transform="translate(300, 100)">
+    <rect x="-70" y="-40" width="140" height="90" fill="white" fill-opacity="0.9" rx="3" />
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16"
+      font-weight="bold" fill="#1a237e">Implementer</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="600" fill="#00838f">Human-led Delivery</text>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      fill="#37474f">You build &amp; create</text>
+    <text x="0" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#6a1b9a" font-style="italic">Delegate: execution support</text>
+    <text x="0" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#d84315">When: Skill application, production</text>
+  </g>
+
+  <!-- Bottom-Left: Curator -->
+  <g transform="translate(100, 300)">
+    <rect x="-70" y="-40" width="140" height="90" fill="white" fill-opacity="0.9" rx="3" />
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16"
+      font-weight="bold" fill="#1a237e">Curator</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="600" fill="#00838f">AI-led Discovery</text>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      fill="#37474f">AI gathers, you evaluate</text>
+    <text x="0" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#6a1b9a" font-style="italic">Delegate: broad exploration</text>
+    <text x="0" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#d84315">When: New domains, time pressure</text>
+  </g>
+
+  <!-- Bottom-Right: Orchestrator -->
+  <g transform="translate(300, 300)">
+    <rect x="-70" y="-40" width="140" height="90" fill="white" fill-opacity="0.9" rx="3" />
+    <text x="0" y="-20" text-anchor="middle" font-family="Arial, sans-serif" font-size="16"
+      font-weight="bold" fill="#1a237e">Orchestrator</text>
+    <text x="0" y="-5" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="600" fill="#00838f">AI-led Delivery</text>
+    <text x="0" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      fill="#37474f">AI produces, you refine</text>
+    <text x="0" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#6a1b9a" font-style="italic">Delegate: complex building</text>
+    <text x="0" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#d84315">When: Advanced skills, efficiency</text>
+  </g>
+
+  <!-- Axis labels with white backgrounds -->
+
+  <!-- Left: Discovery -->
+  <g transform="translate(40, 200)">
+    <rect x="-35" y="-10" width="70" height="20" fill="white" fill-opacity="0.9" rx="2" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="13"
+      font-weight="600" fill="#1a237e">Discovery</text>
+  </g>
+
+  <!-- Right: Delivery -->
+  <g transform="translate(360, 200)">
+    <rect x="-30" y="-10" width="60" height="20" fill="white" fill-opacity="0.9" rx="2" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="13"
+      font-weight="600" fill="#1a237e">Delivery</text>
+  </g>
+
+  <!-- Top: Human-Led -->
+  <g transform="translate(200, 15)">
+    <rect x="-40" y="-10" width="80" height="20" fill="white" fill-opacity="0.9" rx="2" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="13"
+      font-weight="600" fill="#1a237e">Human-Led</text>
+  </g>
+
+  <!-- Bottom: AI-Led -->
+  <g transform="translate(200, 385)">
+    <rect x="-25" y="-10" width="50" height="20" fill="white" fill-opacity="0.9" rx="2" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="13"
+      font-weight="600" fill="#1a237e">AI-Led</text>
+  </g>
+
+</svg>
