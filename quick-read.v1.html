@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Human+AI Collaboration Roles</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-size: 10pt;
+        line-height: 1.5;
+        color: #1a237e;
+      }
+
+      .page {
+        width: 100%;
+        max-width: 8.5in;
+        min-height: 11in;
+        padding: 0.5in;
+        margin: 0 auto;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        page-break-after: always;
+        position: relative;
+        overflow: hidden;
+      }
+
+      @media print {
+        .page {
+          width: 8.5in;
+          height: auto;
+          max-width: 8.5in;
+          min-height: 0;
+          max-height: 10in;
+          padding: 0.4in;
+          page-break-inside: avoid;
+        }
+      }
+
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 23pt;
+        font-weight: 700;
+        color: #00acc1;
+        margin-bottom: 4pt;
+      }
+
+      h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 16pt;
+        font-weight: 600;
+        color: #00acc1;
+        margin-top: 12pt;
+        margin-bottom: 12pt;
+        text-align: center;
+      }
+
+      h3 {
+        font-family: "Poppins", sans-serif;
+        font-size: 12pt;
+        font-weight: 600;
+        color: #1a237e;
+        margin-top: 8pt;
+        margin-bottom: 4pt;
+      }
+
+      .subtitle {
+        font-size: 14pt;
+        color: #546e7a;
+        margin-bottom: 12pt;
+      }
+
+      .intro-box {
+        background: #e1f5fe;
+        padding: 10pt;
+        border-left: 3pt solid #00acc1;
+        margin-bottom: 12pt;
+        font-size: 9pt;
+      }
+
+      .intro-box p {
+        margin-bottom: 4pt;
+      }
+
+      .main-content {
+        display: grid;
+        grid-template-columns: 5fr 2fr;
+        gap: 20pt;
+        margin-bottom: 12pt;
+        align-items: stretch;
+      }
+
+      .left-column {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .left-column h2 {
+        text-align: left;
+        margin-top: 16pt;
+        margin-bottom: 12pt;
+      }
+
+      .quadrant-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .quadrant-container img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .sidebar {
+        background: #f5f5f5;
+        padding: 10pt;
+        border-radius: 6pt;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .sidebar h3 {
+        color: #00838f;
+        font-size: 11pt;
+        margin-bottom: 6pt;
+        margin-top: 0;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .sidebar li {
+        margin-bottom: 6pt;
+        padding-left: 14pt;
+        position: relative;
+        font-size: 9pt;
+      }
+
+      .sidebar li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: #00acc1;
+      }
+
+      .sidebar .motto {
+        margin-top: 10pt;
+        padding-top: 8pt;
+        border-top: 1pt solid #ccc;
+        font-style: italic;
+        color: #00838f;
+        font-size: 9pt;
+        text-align: center;
+      }
+
+      /* Learning Progression Bar */
+      .learning-progression {
+        background: #f0f4f8;
+        border: 1pt solid #00acc1;
+        border-radius: 6pt;
+        padding: 8pt;
+        margin: 16pt 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .learning-progression h3 {
+        width: 100%;
+        text-align: center;
+        font-size: 10pt;
+        color: #00838f;
+        margin: 0 0 6pt 0;
+      }
+
+      .progression-container {
+        display: flex;
+        align-items: center;
+        gap: 6pt;
+      }
+
+      .role-step {
+        background: white;
+        border: 1pt solid #b0bec5;
+        border-radius: 4pt;
+        padding: 4pt 8pt;
+        text-align: center;
+        min-width: 65pt;
+      }
+
+      .role-step.no-ai {
+        background: #e8f5e9;
+        border-color: #4caf50;
+      }
+
+      .role-step.strategist {
+        background: #e0f7fa;
+        border-color: #00acc1;
+      }
+
+      .role-step.implementer {
+        background: #f3e5f5;
+        border-color: #7b1fa2;
+      }
+
+      .role-step.curator {
+        background: #e0f2f1;
+        border-color: #00897b;
+      }
+
+      .role-step.orchestrator {
+        background: #fff3e0;
+        border-color: #e65100;
+      }
+
+      .role-step .role-name {
+        font-weight: 600;
+        font-size: 9pt;
+        color: #1a237e;
+        display: block;
+      }
+
+      .role-step .role-desc {
+        font-size: 7pt;
+        color: #546e7a;
+        display: block;
+        margin-top: 1pt;
+      }
+
+      .progression-arrow {
+        color: #00acc1;
+        font-size: 12pt;
+        font-weight: bold;
+      }
+
+      .axes-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12pt;
+        margin-top: auto;
+      }
+
+      .axis-box {
+        background: #fff;
+        border: 1pt solid #e0e0e0;
+        padding: 8pt;
+        border-radius: 4pt;
+      }
+
+      .axis-box h4 {
+        color: #00838f;
+        font-size: 10pt;
+        margin-bottom: 4pt;
+        margin-top: 0;
+      }
+
+      .axis-box p {
+        font-size: 9pt;
+        margin-bottom: 3pt;
+      }
+
+      .example {
+        font-style: italic;
+        color: #546e7a;
+        font-size: 8pt;
+      }
+
+      /* Page 2 Styles */
+      .decision-tree-visual {
+        background: #fff;
+        border: 2pt solid #00acc1;
+        padding: 8pt;
+        margin-bottom: 10pt;
+        border-radius: 6pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Layout containers for page 2 */
+      .top-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12pt;
+        margin-bottom: 12pt;
+      }
+
+      .bottom-row {
+        display: grid;
+        grid-template-columns: 7fr 3fr;
+        gap: 12pt;
+        margin-bottom: 12pt;
+      }
+
+      .middle-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12pt;
+        margin-bottom: 12pt;
+      }
+
+      .double-diamond-box {
+        background: #e8f5e9;
+        border: 2pt solid #4caf50;
+        padding: 10pt;
+        border-radius: 6pt;
+      }
+
+      .double-diamond-box h3 {
+        color: #2e7d32;
+        font-size: 11pt;
+        margin-bottom: 6pt;
+        margin-top: 0;
+      }
+
+      /* 4 Levels of Abstraction styles */
+      .abstraction-levels {
+        background: #f9fbe7;
+        border: 1pt solid #827717;
+        border-radius: 6pt;
+        padding: 8pt;
+      }
+
+      .abstraction-levels h3 {
+        font-size: 11pt;
+        color: #558b2f;
+        margin-bottom: 4pt;
+        margin-top: 0;
+      }
+
+      .abstraction-levels .intro-text {
+        font-size: 8pt;
+        color: #37474f;
+        margin-bottom: 6pt;
+      }
+
+      .level-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 4pt;
+        font-size: 8pt;
+      }
+
+      .level-item .level-number {
+        font-weight: bold;
+        color: #558b2f;
+        min-width: 50pt;
+      }
+
+      .level-item .level-desc {
+        flex: 1;
+      }
+
+      .level-item.included {
+        color: #1b5e20;
+      }
+
+      .level-item.not-included {
+        color: #9e9e9e;
+        opacity: 0.7;
+      }
+
+      .level-item .check {
+        color: #4caf50;
+        font-weight: bold;
+        margin-right: 4pt;
+      }
+
+      .level-item .cross {
+        color: #e57373;
+        margin-right: 4pt;
+      }
+
+      .tip-box {
+        background: #f5f5f5;
+        padding: 10pt;
+        border-radius: 6pt;
+      }
+
+      .tip-box h3 {
+        color: #00838f;
+        font-size: 11pt;
+        margin-bottom: 6pt;
+        margin-top: 0;
+      }
+
+      .tip-box p {
+        font-size: 9pt;
+        margin-bottom: 6pt;
+      }
+
+      .dpvr-sidebar {
+        background: #fff3e0;
+        padding: 8pt;
+        border-radius: 6pt;
+        border: 1pt solid #ff9800;
+      }
+
+      .dpvr-sidebar h3 {
+        color: #e65100;
+        font-size: 10pt;
+        margin-bottom: 6pt;
+        margin-top: 0;
+      }
+
+      .skill-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 4pt;
+      }
+
+      .skill-item {
+        background: white;
+        padding: 4pt;
+        border-left: 2pt solid #ff6f00;
+        border-radius: 2pt;
+      }
+
+      .skill-item h4 {
+        color: #ff6f00;
+        font-size: 8pt;
+        margin-bottom: 1pt;
+        margin-top: 0;
+      }
+
+      .skill-item p {
+        font-size: 8pt;
+        line-height: 1.2;
+      }
+
+      .skill-item .example {
+        font-size: 8pt;
+        font-style: italic;
+      }
+
+      .references {
+        margin-top: auto;
+        padding-top: 12pt;
+        border-top: 1pt solid #e0e0e0;
+        font-size: 8pt;
+        color: #546e7a;
+      }
+
+      .references h3 {
+        font-size: 9pt;
+        margin-bottom: 4pt;
+      }
+
+      .references p {
+        margin-bottom: 2pt;
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          padding: 0;
+          background: white;
+        }
+
+        .page {
+          margin: 0.25in 0 0 0;
+          box-shadow: none;
+        }
+
+        .page:first-of-type {
+          padding-top: 0.5in;
+        }
+
+        .actions-bar {
+          display: none !important;
+          height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        /* Optimize content spacing for print */
+        .main-content {
+          gap: 16pt;
+        }
+
+        .learning-progression {
+          margin: 12pt 0;
+        }
+
+        h2 {
+          margin-top: 10pt;
+          margin-bottom: 10pt;
+        }
+
+        .intro-box {
+          padding: 8pt;
+        }
+      }
+
+      /* Responsive adjustments for web viewing */
+      @media screen and (max-width: 900px) {
+        .page {
+          width: 100%;
+          height: auto;
+          min-height: auto;
+          padding: 20px;
+          margin-bottom: 40px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+          font-size: 18pt;
+        }
+
+        h2 {
+          font-size: 14pt;
+        }
+
+        .subtitle {
+          font-size: 12pt;
+        }
+
+        .main-content {
+          grid-template-columns: 1fr;
+          gap: 12pt;
+        }
+
+        .sidebar {
+          order: 2;
+          margin-top: 12pt;
+        }
+
+        .left-column {
+          order: 1;
+        }
+
+        .top-row,
+        .bottom-row {
+          grid-template-columns: 1fr;
+        }
+
+        .axes-section {
+          grid-template-columns: 1fr;
+        }
+
+        .skill-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Additional responsive breakpoint for smaller screens */
+      @media screen and (max-width: 600px) {
+        .page {
+          padding: 15px;
+        }
+
+        h1 {
+          font-size: 16pt;
+        }
+
+        .intro-box {
+          padding: 8pt;
+          font-size: 8pt;
+        }
+
+        .decision-step {
+          padding-left: 24pt;
+        }
+
+        .decision-step .number {
+          width: 18pt;
+          height: 18pt;
+          font-size: 9pt;
+        }
+      }
+
+      /* Web-specific enhancements */
+      @media screen {
+        body {
+          background: #f0f0f0;
+          padding: 20px 0;
+        }
+
+        .page {
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          border-radius: 8px;
+          margin-bottom: 40px;
+        }
+
+        /* Download/Print button */
+        .actions-bar {
+          width: 100%;
+          max-width: 8.5in;
+          padding: 0 0.5in;
+          margin: 0 auto 20px;
+          text-align: right;
+          box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 900px) {
+          .actions-bar {
+            padding: 0 20px;
+          }
+        }
+
+        @media screen and (max-width: 600px) {
+          .actions-bar {
+            padding: 0 15px;
+          }
+        }
+
+        .btn-download {
+          background: #00acc1;
+          color: white;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 4px;
+          font-family: "Poppins", sans-serif;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+          background: #00838f;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="color: red">early draft & concept notes</h2>
+
+    <!-- Optional action bar for web version -->
+    <div class="actions-bar">
+      <button
+        class="btn-download"
+        onclick="document.body.offsetHeight; setTimeout(() => window.print(), 10);"
+      >
+        Download as PDF
+      </button>
+    </div>
+
+    <!-- PAGE 1: INTRODUCING THE MODEL & CONCEPTS -->
+    <div class="page">
+      <div class="main-content">
+        <div class="left-column">
+          <header>
+            <h1>Human+AI Collaboration Roles</h1>
+            <p class="subtitle">Cognitive Delegation with Agency</p>
+          </header>
+
+          <div class="intro-box">
+            <p>
+              <strong>What is this:</strong> A practical tool for deciding how
+              humans and AI should collaborate.
+              <em
+                >No technical knowledge required—just understand how AI behaves,
+                not how it's coded.</em
+              >
+            </p>
+            <p>
+              <strong>What isn't this:</strong> Not prescriptive rules. Not a
+              yes/no to AI. Not about replacing human creativity. It's a
+              thinking tool that preserves student agency while teaching AI
+              collaboration.
+            </p>
+          </div>
+
+          <div class="quadrant-container">
+            <img
+              src="quadrant.svg"
+              alt="Human-AI Collaboration Framework showing four roles: Strategist, Implementer, Curator, and Orchestrator arranged in a Cartesian coordinate system"
+            />
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <h3>Key Concepts</h3>
+          <ul>
+            <li>
+              <strong>Cognitive Delegation:</strong> Intentionally dividing
+              intellectual tasks. Each role delegates differently—exploration,
+              execution, gathering, or building.
+            </li>
+            <li>
+              <strong>Double Diamond Framework:</strong> Design thinking model
+              with 4 phases (Discover, Define, Develop, Deliver) alternating
+              divergent and convergent thinking. Maps directly to the
+              Brainstorming/Delivery axis.
+            </li>
+            <li>
+              <strong>Perspective-Taking:</strong> Understanding what AI "knows"
+              and how it "thinks"
+            </li>
+            <li>
+              <strong>Dynamic Role-Trading:</strong> Switch roles as project
+              needs change
+            </li>
+            <li>
+              <strong>Student Agency:</strong> Learner maintains control over
+              goals and decisions
+            </li>
+            <li>
+              <strong>Learning Objectives First:</strong> Choose role based on
+              what students need to learn
+            </li>
+          </ul>
+          <div class="motto">
+            <strong>"Hats, not Pigeonholes"</strong><br />
+            You can move anywhere on this spectrum—<br />even within a single
+            project!
+          </div>
+        </div>
+      </div>
+
+      <!-- <h3>The Axes Defined</h3> -->
+      <div class="axes-section">
+        <div class="axis-box">
+          <h4>Brainstorming ↔ Delivery</h4>
+          <p>
+            <strong>Brainstorming:</strong> Divergent thinking, exploring
+            possibilities, understanding problems
+          </p>
+          <p class="example">
+            Example: Brainstorming essay topics, researching perspectives,
+            exploring solutions
+          </p>
+          <p>
+            <strong>Delivery:</strong> Convergent thinking, executing plans,
+            producing outputs
+          </p>
+          <p class="example">
+            Example: Writing final draft, creating presentation, solving
+            specific problems
+          </p>
+        </div>
+        <div class="axis-box">
+          <h4>Human-Led ↔ AI-Led</h4>
+          <p>
+            <strong>Human-Led:</strong> You set direction & milestones, AI
+            supports your vision
+          </p>
+          <p class="example">
+            Example: Student creates outline, AI helps polish language
+          </p>
+          <p>
+            <strong>AI-Led:</strong> AI generates options & drafts, you evaluate
+            & guide
+          </p>
+          <p class="example">
+            Example: AI creates practice problems, student selects appropriate
+            ones
+          </p>
+        </div>
+      </div>
+
+      <!-- Learning Progression Bar -->
+      <div class="learning-progression">
+        <h3>Suggested Learning Progression</h3>
+        <div class="progression-container">
+          <div class="role-step no-ai">
+            <span class="role-name">No AI</span>
+          </div>
+          <span class="progression-arrow">→</span>
+          <div class="role-step implementer">
+            <span class="role-name">Implementer</span>
+          </div>
+          <span class="progression-arrow">→</span>
+          <div class="role-step strategist">
+            <span class="role-name">Strategist</span>
+          </div>
+          <span class="progression-arrow">→</span>
+          <div class="role-step curator">
+            <span class="role-name">Curator</span>
+          </div>
+          <span class="progression-arrow">→</span>
+          <div class="role-step orchestrator">
+            <span class="role-name">Orchestrator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 2: PRACTICAL TIPS & REFERENCES -->
+    <div class="page">
+      <div class="top-row">
+        <div class="abstraction-levels">
+          <h3>4 Levels of AI Abstraction</h3>
+
+          <div class="level-item included">
+            <span class="check">✓</span>
+            <span class="level-number">Level 3 - Behavioral:</span>
+            <span class="level-desc"
+              >How AI acts and reacts in dynamic collaboration</span
+            >
+          </div>
+
+          <div class="level-item included">
+            <span class="check">✓</span>
+            <span class="level-number">Level 2 - "Cognitive":</span>
+            <span class="level-desc"
+              >Using perspective-taking to understand what AI "knows" and how it
+              "thinks"</span
+            >
+          </div>
+
+          <div class="level-item not-included">
+            <span class="cross">✗</span>
+            <span class="level-number">Level 1 - Conceptual:</span>
+            <span class="level-desc"
+              >Math & programming under the hood (not covered here)</span
+            >
+          </div>
+
+          <div class="level-item not-included">
+            <span class="cross">✗</span>
+            <span class="level-number">Level 0 - Physical:</span>
+            <span class="level-desc"
+              >Hardware & infrastructure requirements (not covered here)</span
+            >
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <h3>Application Modes</h3>
+          <p><strong>Diagnostic (Reflecting):</strong></p>
+          <p>
+            "Which role am I currently playing? Does it align with my learning
+            goals?"
+          </p>
+          <p class="example">
+            Example: Teacher realizes they're always in Orchestrator
+            mode—missing opportunities for deeper student thinking.
+          </p>
+
+          <p><strong>Prescriptive (Planning):</strong></p>
+          <p>
+            "Given my objectives and constraints, which role should I adopt?"
+          </p>
+          <p class="example">
+            Example: For creative writing unit, start as Strategist
+            (brainstorming), then shift to Implementer (drafting).
+          </p>
+        </div>
+      </div>
+
+      <div class="middle-row">
+        <div class="double-diamond-box">
+          <h3>Design Process Alignment (Double Diamond)</h3>
+          <p>The 4 roles map naturally to design thinking phases:</p>
+          <p class="example">
+            <strong>Discover</strong> (divergent): Strategist explores problem
+            space<br />
+            <strong>Define</strong> (convergent): Strategist narrows to specific
+            problem<br />
+            <strong>Develop</strong> (divergent): Curator generates solution
+            options<br />
+            <strong>Deliver</strong> (convergent): Implementer/Orchestrator
+            executes solution
+          </p>
+          <p
+            class="example"
+            style="font-size: 8pt; color: #2e7d32; font-style: italic"
+          >
+            Tip: You might cycle through multiple diamonds in one project,
+            switching roles as needed!
+          </p>
+        </div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="decision-tree-visual">
+          <img
+            src="decision-tree.svg"
+            alt="Strategic Role Selection Decision Tree showing how to choose between No AI, Strategist, Implementer, Curator, and Orchestrator roles"
+            style="width: 100%; height: auto; display: block"
+          />
+        </div>
+
+        <div class="dpvr-sidebar">
+          <h3>The DPVR Skills</h3>
+          <p style="font-size: 8pt; margin: 0 0 4pt 0; font-style: italic">
+            All require perspective-taking: understanding how AI "thinks"
+          </p>
+          <div class="skill-grid">
+            <div class="skill-item">
+              <h4>Delegate</h4>
+              <p>
+                Identify tasks AI handles well
+                <span class="example">Citations, examples</span>
+                <br /><span style="font-size: 8pt; color: #e65100"
+                  >↑ Strategist, Implementer</span
+                >
+              </p>
+            </div>
+            <div class="skill-item">
+              <h4>Probe</h4>
+              <p>
+                Test AI's understanding
+                <span class="example">"Why this answer?"</span>
+                <br /><span style="font-size: 8pt; color: #e65100"
+                  >↑ Curator, Strategist</span
+                >
+              </p>
+            </div>
+            <div class="skill-item">
+              <h4>Verify</h4>
+              <p>
+                Check accuracy & relevance
+                <span class="example">Fact-check, test</span>
+                <br /><span style="font-size: 8pt; color: #e65100"
+                  >↑ Curator, Orchestrator</span
+                >
+              </p>
+            </div>
+            <div class="skill-item">
+              <h4>Repair</h4>
+              <p>
+                Fix specific problems
+                <span class="example">"Too formal"</span>
+                <br /><span style="font-size: 8pt; color: #e65100"
+                  >↑ Implementer, Orchestrator</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="references">
+        <h3>References & Further Reading</h3>
+        <p>
+          <strong>Framework Development:</strong> Based on research in cognitive
+          delegation and human-AI collaboration
+        </p>
+        <p>
+          <strong>Key Concepts:</strong> DPVR skills adapted from Dave Dixon's
+          synthesis of "Quantifying Human-AI Synergy" (Riedl & Weidmann)
+        </p>
+        <p>
+          <strong>Perspective-Taking Research:</strong> Drawn from cognitive
+          science and theory of mind literature
+        </p>
+        <p>
+          <strong>Learn More:</strong> [Your website URL] | Contact: [Your
+          email]
+        </p>
+        <p style="margin-top: 6pt">
+          <em
+            >This framework empowers educators to guide student AI use while
+            maintaining focus on learning objectives and critical thinking
+            development.</em
+          >
+        </p>
+      </div>
+    </div>
+
+    <!-- Simple print functionality for web version -->
+    <script>
+      // Show download button only on web
+      if (window.matchMedia && window.matchMedia("screen").matches) {
+        const actionsBar = document.querySelector(".actions-bar");
+        if (actionsBar) {
+          actionsBar.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

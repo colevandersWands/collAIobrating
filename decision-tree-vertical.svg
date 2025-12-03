@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 550" width="500" height="550">
+  <!-- Define styles and markers -->
+  <defs>
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#546e7a" />
+    </marker>
+
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="1" stdDeviation="1" flood-opacity="0.1" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="550" fill="#fafafa" />
+
+  <!-- START: To AI or Not to AI? -->
+  <g id="start-node" transform="translate(250, 40)">
+    <rect x="-50" y="-12" width="100" height="24" fill="white" stroke="#00acc1" stroke-width="2"
+      rx="4" filter="url(#shadow)" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#00acc1">
+      To AI or Not?
+    </text>
+  </g>
+
+  <!-- NO AI Outcome (left side) -->
+  <g id="no-ai-role" transform="translate(100, 130)">
+    <rect x="-55" y="-30" width="110" height="60" fill="#4caf50" stroke="#2e7d32" stroke-width="2"
+      rx="4" filter="url(#shadow)" />
+    <text x="0" y="-14" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="white">
+      No AI
+    </text>
+    <text x="0" y="-2" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="white">
+      • First exposure to skill
+    </text>
+    <text x="0" y="6" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="white">
+      • Practicing foundations
+    </text>
+    <text x="0" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="white">
+      • Full transparency
+    </text>
+    <text x="0" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="white">
+      • Joy of doing
+    </text>
+  </g>
+
+  <!-- Primary Goal Question (right side) -->
+  <g id="goal-node" transform="translate(400, 130)">
+    <rect x="-50" y="-12" width="100" height="24" fill="white" stroke="#00acc1" stroke-width="1.5"
+      rx="4" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      font-weight="bold" fill="#00acc1">
+      Primary Goal?
+    </text>
+  </g>
+
+  <!-- Learning Branch (left) -->
+  <g id="learning-branch" transform="translate(250, 220)">
+    <rect x="-65" y="-12" width="130" height="24" fill="white" stroke="#2196f3" stroke-width="1.5"
+      rx="4" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#1565c0">
+      Discovery vs Practice?
+    </text>
+  </g>
+
+  <!-- Performing Branch (right) -->
+  <g id="performance-branch" transform="translate(380, 220)">
+    <rect x="-60" y="-12" width="120" height="24" fill="white" stroke="#ff9800" stroke-width="1.5"
+      rx="4" />
+    <text x="0" y="4" text-anchor="middle" font-family="Arial, sans-serif" font-size="9"
+      fill="#e65100">
+      Ideation vs Execution?
+    </text>
+  </g>
+
+  <!-- Human outcomes row -->
+  <!-- Human-Led Exploring -->
+  <g id="human-exploring" transform="translate(120, 340)">
+    <rect x="-60" y="-30" width="120" height="60" fill="#e0f7fa" stroke="#00acc1" stroke-width="2"
+      rx="4" filter="url(#shadow)" />
+    <text x="0" y="-12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#00838f">
+      Human-Led
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#00838f">
+      Exploring
+    </text>
+    <text x="0" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="8"
+      fill="#006064">
+      You explore &amp; discover
+    </text>
+    <text x="0" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="#006064" font-style="italic">
+      Discovery learning
+    </text>
+  </g>
+
+  <!-- Human-Led Applying -->
+  <g id="human-applying" transform="translate(260, 340)">
+    <rect x="-60" y="-30" width="120" height="60" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2"
+      rx="4" filter="url(#shadow)" />
+    <text x="0" y="-12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#6a1b9a">
+      Human-Led
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#6a1b9a">
+      Applying
+    </text>
+    <text x="0" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="8"
+      fill="#4a148c">
+      You build &amp; create
+    </text>
+    <text x="0" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="#4a148c" font-style="italic">
+      Skill practice
+    </text>
+  </g>
+
+  <!-- AI outcomes row -->
+  <!-- AI-Led Exploring -->
+  <g id="ai-exploring" transform="translate(240, 470)">
+    <rect x="-60" y="-30" width="120" height="60" fill="#e0f2f1" stroke="#00897b" stroke-width="2"
+      rx="4" filter="url(#shadow)" />
+    <text x="0" y="-12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#00695c">
+      AI-Led
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#00695c">
+      Exploring
+    </text>
+    <text x="0" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="8"
+      fill="#004d40">
+      AI gathers options
+    </text>
+    <text x="0" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="#004d40" font-style="italic">
+      Rapid ideation
+    </text>
+  </g>
+
+  <!-- AI-Led Applying -->
+  <g id="ai-applying" transform="translate(380, 470)">
+    <rect x="-60" y="-30" width="120" height="60" fill="#fff3e0" stroke="#e65100" stroke-width="2"
+      rx="4" filter="url(#shadow)" />
+    <text x="0" y="-12" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#d84315">
+      AI-Led
+    </text>
+    <text x="0" y="0" text-anchor="middle" font-family="Arial, sans-serif" font-size="10"
+      font-weight="bold" fill="#d84315">
+      Applying
+    </text>
+    <text x="0" y="14" text-anchor="middle" font-family="Arial, sans-serif" font-size="8"
+      fill="#bf360c">
+      AI produces results
+    </text>
+    <text x="0" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="7"
+      fill="#bf360c" font-style="italic">
+      Efficient output
+    </text>
+  </g>
+
+  <!-- Connection Lines -->
+  <!-- Start to NO AI -->
+  <line x1="210" y1="52" x2="135" y2="100" stroke="#4caf50" stroke-width="2"
+    marker-end="url(#arrow)" />
+  <text x="170" y="75" font-family="Arial, sans-serif" font-size="8" font-weight="bold"
+    fill="#4caf50">NO</text>
+
+  <!-- Start to Primary Goal -->
+  <line x1="290" y1="52" x2="365" y2="118" stroke="#00acc1" stroke-width="2"
+    marker-end="url(#arrow)" />
+  <text x="330" y="80" font-family="Arial, sans-serif" font-size="8" font-weight="bold"
+    fill="#00acc1">YES</text>
+
+  <!-- Primary Goal to branches -->
+  <!-- To Learning -->
+  <line x1="370" y1="142" x2="280" y2="208" stroke="#2196f3" stroke-width="1.5"
+    marker-end="url(#arrow)" />
+  <text x="320" y="175" font-family="Arial, sans-serif" font-size="8" fill="#1565c0">Learning</text>
+
+  <!-- To Performing -->
+  <line x1="400" y1="142" x2="380" y2="208" stroke="#ff9800" stroke-width="1.5"
+    marker-end="url(#arrow)" />
+  <text x="390" y="175" font-family="Arial, sans-serif" font-size="8" fill="#e65100">Performing</text>
+
+  <!-- Learning to Human outcomes -->
+  <!-- To Human-Led Exploring -->
+  <line x1="210" y1="232" x2="150" y2="310" stroke="#00acc1" stroke-width="1.5"
+    marker-end="url(#arrow)" />
+  <text x="175" y="270" font-family="Arial, sans-serif" font-size="7" fill="#00acc1">Discovery</text>
+
+  <!-- To Human-Led Applying -->
+  <line x1="250" y1="232" x2="260" y2="310" stroke="#7b1fa2" stroke-width="1.5"
+    marker-end="url(#arrow)" />
+  <text x="255" y="270" font-family="Arial, sans-serif" font-size="7" fill="#7b1fa2">Practice</text>
+
+  <!-- Performing to AI outcomes -->
+  <!-- To AI-Led Exploring -->
+  <line x1="350" y1="232" x2="270" y2="440" stroke="#00897b" stroke-width="1.5"
+    marker-end="url(#arrow)" />
+  <text x="310" y="340" font-family="Arial, sans-serif" font-size="7" fill="#00897b">Ideation</text>
+
+  <!-- To AI-Led Applying -->
+  <line x1="380" y1="232" x2="380" y2="440" stroke="#e65100" stroke-width="1.5"
+    marker-end="url(#arrow)" />
+  <text x="390" y="340" font-family="Arial, sans-serif" font-size="7" fill="#e65100">Execution</text>
+
+</svg>
